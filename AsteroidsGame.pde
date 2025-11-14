@@ -25,7 +25,6 @@ void keyPressed() {
     if (keyCode == UP) {
       ship.accelerate(ship.myAcceleration);
       ship.setAccelerating(true);
-      println(ship.myXspeed + ", " + ship.myYspeed);
     }
   } else {
     if (key == 'h' || key == 'H') ship.hyperspace();
