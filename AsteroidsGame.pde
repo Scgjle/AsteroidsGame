@@ -25,6 +25,7 @@ void keyPressed() {
     if (keyCode == UP) {
       ship.accelerate(ship.myAcceleration);
       ship.setAccelerating(true);
+      println(ship.myXspeed + ", " + ship.myYspeed);
       text(ship.myAcceleration, 20, 20);
     }
   } else {
