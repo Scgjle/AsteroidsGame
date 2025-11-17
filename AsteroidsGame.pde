@@ -25,6 +25,7 @@ void keyPressed() {
     if (keyCode == UP) {
       ship.accelerate(ship.myAcceleration);
       ship.setAccelerating(true);
+      text(ship.myAcceleration, 20, 20);
     }
   } else {
     if (key == 'h' || key == 'H') ship.hyperspace();
