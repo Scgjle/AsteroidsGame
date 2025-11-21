@@ -37,10 +37,10 @@ void draw() {
 
 void keyPressed() {
   if (key == CODED) {
-    if (keyCode == LEFT)  ship.turn(-ship.myRotationalSpeed);
-    if (keyCode == RIGHT) ship.turn(+ship.myRotationalSpeed);
+    if (keyCode == LEFT) ship.turn(-ship.getRotationalSpeed());
+    if (keyCode == RIGHT) ship.turn(+ship.getRotationalSpeed());
     if (keyCode == UP) {
-      ship.accelerate(ship.myAcceleration);
+      ship.ship.accelerate(ship.getAcceleration());
       ship.setAccelerating(true);
     }
   } else {
