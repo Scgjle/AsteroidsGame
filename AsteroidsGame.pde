@@ -25,7 +25,7 @@ void draw() {
   
   for (int i = asteroids.size() - 1; i >= 0; i--) {
     Asteroid a = asteroids.get(i);
-    float notwow = dist((float)ship.myCenterX, (float)ship.myCenterY, (float)a.myCenterX, (float)a.myCenterY);
+    float notwow = dist((float)ship.getX(), (float)ship.getY(), (float)a.getX(), (float)a.getY());
     if (notwow < 20) { 
       asteroids.remove(i);
     } else {
