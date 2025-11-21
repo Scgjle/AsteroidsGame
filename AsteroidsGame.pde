@@ -25,8 +25,7 @@ void draw() {
 
   for (int i = asteroids.size() - 1; i >= 0; i--) {
     Asteroid a = asteroids.get(i);
-    float distance = dist((float)ship.getX(), (float)ship.getY(),
-                          (float)a.getX(), (float)a.getY());
+    float distance = dist((float)ship.getX(), (float)ship.getY(), (float)a.getX(), (float)a.getY());
     if (distance < 20) {
       asteroids.remove(i);
     } else {
