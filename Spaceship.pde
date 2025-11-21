@@ -30,6 +30,14 @@ class Spaceship extends Floater
     accelerating= false;
   }
 
+ public void move() {
+  if (accelerating) {
+    accelerate(myAcceleration);
+  }
+  super.move();
+ }
+
+
   public void hyperspace() {
     myXspeed = 0.0;
     myYspeed = 0.0;
