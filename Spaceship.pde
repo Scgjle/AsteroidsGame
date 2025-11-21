@@ -3,6 +3,9 @@ class Spaceship extends Floater
   private double myAcceleration;
   private double myRotationalSpeed;
   private boolean accelearting;
+  public double getAcceleration() { return myAcceleration; }
+  public double getRotationalSpeed() { return myRotationalSpeed; }
+
 
   public Spaceship() {
     corners = 4;
