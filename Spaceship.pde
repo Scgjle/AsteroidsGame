@@ -5,6 +5,12 @@ class Spaceship extends Floater
   private boolean accelearting;
   public double getAcceleration() { return myAcceleration; }
   public double getRotationalSpeed() { return myRotationalSpeed; }
+  public float getX() { 
+   return (float)myCenterX; 
+  }
+  public float getY() { 
+   return (float)myCenterY; 
+  }
 
 
   public Spaceship() {
