@@ -27,7 +27,7 @@ class Spaceship extends Floater
     myPointDirection= 0.0;
     myAcceleration= 0.1;
     myRotationalSpeed= 8.0;
-    accelearting= false;
+    accelerating= false;
   }
 
   public void hyperspace() {
@@ -38,9 +38,9 @@ class Spaceship extends Floater
     myPointDirection = Math.random() * 360.0;
   }
   public void setAccelerating(boolean a) {
-    accelearting = a;
+    accelerating = a;
   }
   public boolean isAccelerating() {
-    return accelearting;
+    return accelerating;
   }
 }
