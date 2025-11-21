@@ -17,16 +17,22 @@ void setup() {
 
 void draw() {
   background(0);
+  
+  // Draw stars
   for (int i = 0; i < stars.length; i++) {
     stars[i].show();
   }
+  
+  // Update ship
   ship.move();
   ship.show();
 
+  // Update asteroids + collision
   for (int i = asteroids.size() - 1; i >= 0; i--) {
     Asteroid a = asteroids.get(i);
-    float distance = dist((float)ship.getX(), (float)ship.getY(), (float)a.getX(), (float)a.getY());
-    if (distance < 20) {
+    float distance = dist((float)ship.getX(), (float)ship.getY(),
+                          (float)a.getX(), (float)a.getY());
+    if (distance < 25) { // slightly larger threshold
       asteroids.remove(i);
     } else {
       a.move();
