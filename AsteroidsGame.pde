@@ -16,17 +16,18 @@ void setup() {
 }
 
 void draw() {
-  background(0); // optional, clears screen each frame
+  background(0);
   for (int i = 0; i < stars.length; i++) {
     stars[i].show();
   }
   ship.move();
   ship.show();
-  
+
   for (int i = asteroids.size() - 1; i >= 0; i--) {
     Asteroid a = asteroids.get(i);
-    float notwow = dist((float)ship.getX(), (float)ship.getY(), (float)a.getX(), (float)a.getY());
-    if (notwow < 20) { 
+    float distance = dist((float)ship.getX(), (float)ship.getY(),
+                          (float)a.getX(), (float)a.getY());
+    if (distance < 20) {
       asteroids.remove(i);
     } else {
       a.move();
@@ -37,10 +38,9 @@ void draw() {
 
 void keyPressed() {
   if (key == CODED) {
-    if (keyCode == LEFT) ship.turn(-ship.getRotationalSpeed());
+    if (keyCode == LEFT)  ship.turn(-ship.getRotationalSpeed());
     if (keyCode == RIGHT) ship.turn(+ship.getRotationalSpeed());
     if (keyCode == UP) {
-      ship.ship.accelerate(ship.getAcceleration());
       ship.setAccelerating(true);
     }
   } else {
