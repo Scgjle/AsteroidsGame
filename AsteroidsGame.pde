@@ -41,9 +41,9 @@ void draw() {
       a.show();
     }
     textSize(17);
-    int bulletsLeft = 5 - bullets.size();
-    int asteroidsLeft = asteroids.size();
-    text("bullets left: " + String.valueOf(bulletsLeft) + " asteroids left: " + String.valueOf(asteroidsLeft), 40, 40, 280, 320); 
+    String bulletsLeft = 5 - (bullets.size() + "");
+    String asteroidsLeft = asteroids.size() + "";
+    text("bullets left: " + bulletsLeft + " asteroids left: " + asteroidsLeft, 40, 40, 280, 320); 
   }
   
   // stuff
