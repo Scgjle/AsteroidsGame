@@ -41,4 +41,3 @@ public class Asteroid extends Floater {
   turn(rotationSpeed);
   }
 }
-
