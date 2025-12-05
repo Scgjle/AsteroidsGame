@@ -51,7 +51,6 @@ void draw() {
   Bullet b = bullets.get(i);
   b.move();
   b.show();
-  System.out.println(bullets.size());
   }
   
    for (int i = bullets.size()-1; i >= 0; i--) {
