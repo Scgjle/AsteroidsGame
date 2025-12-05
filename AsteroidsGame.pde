@@ -69,6 +69,7 @@ void draw() {
 
 void keyPressed() {
   if (key == CODED) {
+      println(keyCode);
     if (keyCode == LEFT)  ship.turn(-ship.getRotationalSpeed());
     if (keyCode == RIGHT) ship.turn(+ship.getRotationalSpeed());
     if ((keyCode == SHIFT) && bullets.size() < 5) bullets.add(new Bullet(ship));
