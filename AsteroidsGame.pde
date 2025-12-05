@@ -72,7 +72,7 @@ void keyPressed() {
       println(keyCode);
     if (keyCode == LEFT)  ship.turn(-ship.getRotationalSpeed());
     if (keyCode == RIGHT) ship.turn(+ship.getRotationalSpeed());
-    if ((keyCode == SHIFT) && bullets.size() < 5) bullets.add(new Bullet(ship));
+    if ((keyCode == 16) && bullets.size() < 5) bullets.add(new Bullet(ship));
     if (keyCode == UP) {
       ship.setAccelerating(true);
     }
