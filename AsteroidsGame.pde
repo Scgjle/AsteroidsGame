@@ -4,6 +4,8 @@ ArrayList<Asteroid> asteroids;
 ArrayList<Bullet> bullet;
 ArrayList<Bullet> bullets = new ArrayList<Bullet>();
 
+boolean gameWon = false; // for end screen
+
 
 void setup() {
   size(800, 800);
@@ -20,6 +22,19 @@ void setup() {
 
 void draw() {
   background(0);
+
+if(asteroids.size() == 0) {
+gameWon = true;
+
+if (gameWon) {
+    // Show win screen
+    textAlign(CENTER, CENTER);
+    textSize(64);
+    fill(255, 255, 0);
+    text("YOU WIN!", width/2, height/2);
+    return; // stop drawing game objects
+  }
+}
   
   
   // Draw stars
