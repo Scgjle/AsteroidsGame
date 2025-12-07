@@ -3,6 +3,8 @@ Star[] stars;
 ArrayList<Asteroid> asteroids;
 ArrayList<Bullet> bullet;
 ArrayList<Bullet> bullets = new ArrayList<Bullet>();
+int ShipHealth = 5; // starting health
+int totalHealth = 5; // same as starting health
 
 boolean gameWon = false; // for end screen
 
@@ -22,9 +24,9 @@ void setup() {
 
 void draw() {
   background(0);
-
 if(asteroids.size() == 0) {
 gameWon = true;
+
 
 if (gameWon) {
     // Show win screen
@@ -32,9 +34,17 @@ if (gameWon) {
     textSize(64);
     fill(255, 255, 0);
     text("YOU WIN!", width/2, height/2);
-    return; // stop drawing game objects
-  }
+    return; // stop drawing game objects 
+  } 
 }
+  
+if (ShipHealth == 0) {
+    textAlign(CENTER, CENTER);
+    textSize(64);
+    fill(255, 0, 0);
+    text("Ur bunz", width/2, height/2);
+    return; // stop drawing game objects
+ }
   
   
   // Draw stars
@@ -51,14 +61,17 @@ if (gameWon) {
     float distance = dist((float)ship.getX(), (float)ship.getY(), (float)a.getX(), (float)a.getY());
     if (distance < 25) { // slightly larger threshold
       asteroids.remove(i);
+      ShipHealth--;
+      
     } else {
       a.move();
       a.show();
     }
     textSize(17);
-    String bulletsLeft = 5 - (bullets.size() + "");
+    String bulletsLeft = 5 - bullets.size() + "";
     String asteroidsLeft = asteroids.size() + "";
-    text("bullets left: " + bulletsLeft + " asteroids left: " + asteroidsLeft, 40, 40, 280, 320); 
+    String shiphealth = ShipHealth + "";
+    text("bullets left: " + bulletsLeft + " asteroids left: " + asteroidsLeft + "          health: " + shiphealth + "/" + totalHealth, 40, 40, 280, 320); 
   }
   
   // stuff
