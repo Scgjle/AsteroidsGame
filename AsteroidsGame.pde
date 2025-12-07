@@ -3,8 +3,8 @@ Star[] stars;
 ArrayList<Asteroid> asteroids;
 ArrayList<Bullet> bullet;
 ArrayList<Bullet> bullets = new ArrayList<Bullet>();
-int ShipHealth = 5; // starting health
-int totalHealth = 5; // same as starting health
+int ShipHealth = 3; // starting health
+int totalHealth = 3; // same as starting health
 
 boolean gameWon = false; // for end screen
 
